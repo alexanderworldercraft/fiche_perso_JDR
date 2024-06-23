@@ -94,6 +94,8 @@
                                         <label class="form-check-label" for="togglePassword">
                                             Voir le mot de passe
                                         </label>
+                                        <!-- script pour voir le mot de passe -->
+                                        <script src="serve_file.php?file=js/togglePasswordVisibility.js"></script>
                                     </div>
                                     <input type="submit" value="Créer le compte" class="btn btn-primary rounded-3">
                                 </fieldset>

@@ -52,8 +52,8 @@
                                     <div class="row row-cols-1 row-cols-md-2 mb-3">
                                         <div class="col">
                                             <div class="form-floating mb-3">
-                                                <input type="text" class="form-control rounded-3" name="user"
-                                                    id="user" placeholder="user" required>
+                                                <input type="text" class="form-control rounded-3" name="user" id="user"
+                                                    placeholder="user" required>
                                                 <label for="user">Nom d'utilisateur</label>
                                             </div>
                                         </div>
@@ -64,6 +64,15 @@
                                                 <label for="password">Mot de passe</label>
                                             </div>
                                         </div>
+                                    </div>
+                                    <div class="form-check text-start my-3">
+                                        <input id="togglePassword" class="form-check-input shadow-lg" type="checkbox"
+                                            id="togglePassword">
+                                        <label class="form-check-label" for="togglePassword">
+                                            Voir le mot de passe
+                                        </label>
+                                        <!-- script pour voir le mot de passe -->
+                                        <script src="serve_file.php?file=js/togglePasswordVisibility.js"></script>
                                     </div>
                                     <input type="submit" value="Se connecter" class="btn btn-primary rounded-3">
                                 </fieldset>
