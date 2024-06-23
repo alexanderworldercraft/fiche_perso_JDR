@@ -1,0 +1,14 @@
+# Configurer des pages d'erreur personnalisées
+ErrorDocument 404 /fiche_perso_JDR/404.html
+ErrorDocument 403 /fiche_perso_JDR/403.html
+ErrorDocument 500 /fiche_perso_JDR/500.html
+
+# Rendre un dossier public
+<If "%{REQUEST_URI} =~ m#^/fiche_perso_JDR/#">
+    Require all granted
+</If>
+
+# Rendre un dossier privé
+<If "%{REQUEST_URI} =~ m#^/fiche_perso_JDR/private/#">
+    Require all denied
+</If>
