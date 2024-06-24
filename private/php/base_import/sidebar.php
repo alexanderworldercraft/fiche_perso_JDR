@@ -4,9 +4,9 @@
         <div class="sidebar-header">
             <div class="pro-sidebar-logo">
                 <div>
-                    <a href="/fiche_perso_JDR" style="color: white;">J</a>
+                    <a href="/fiche_perso_JDR" style="color: white;">JDR</a>
                 </div>
-                <h5>JDR</h5>
+                <h5 class="m-0">Jeu De Rôle</h5>
             </div>
         </div>
         <div id="container_nav" class="sidebar-content">

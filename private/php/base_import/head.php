@@ -19,12 +19,42 @@
 <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 <!-- Highlight style -->
-<link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" />
-    <!-- Highlight script -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-    <!-- Exercution du code Highlight script -->
-    <script>hljs.highlightAll();</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" />
+<!-- Highlight script -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<!-- Exercution du code Highlight script -->
+<script>
+hljs.highlightAll();
+</script>
+
+<!-- Bibliothèque pour les select (recherche d'options) (select2) -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+<style>
+        /* Thème sombre personnalisé pour Select2 */
+        .select2-container--default .select2-selection--single {
+            background-color: #333;
+            color: #fff;
+            border: 1px solid #444;
+        }
+        .select2-container--default .select2-selection--single .select2-selection__arrow b {
+            border-color: #fff transparent transparent transparent;
+        }
+        .select2-container--default .select2-selection--single .select2-selection__placeholder {
+            color: #ccc;
+        }
+        .select2-dropdown {
+            background-color: #333;
+            color: #fff;
+            border: 1px solid #444;
+        }
+        .select2-results__option {
+            background-color: #333;
+            color: #fff;
+        }
+        .select2-results__option--highlighted {
+            background-color: #555;
+        }
+    </style>
 
 <?php
 session_start();

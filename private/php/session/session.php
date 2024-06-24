@@ -3,9 +3,10 @@
 session_start();
 if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
     // L'utilisateur n'est pas connecté ou la session n'est pas valide
-    header('Location: /fiche_perso_JDR/'); // Redirection vers la page de connexion
+    header('Location: ./login.php'); // Redirection vers la page de connexion
     exit();
 }
+$user_id = $_SESSION['user_id']; // Récupérez l'ID de l'utilisateur depuis la session
 // Définir un tableau des grades autorisés
 
 // Durée de timeout en secondes (ex: 300 secondes = 5 minutes)
@@ -21,7 +22,7 @@ if (isset($_SESSION['last_activity'])) {
         // Détruire la session et rediriger vers la page de connexion
         session_unset();
         session_destroy();
-        header('Location: /fiche_perso_JDR/');
+        header('Location: ./login.php');
         exit();
     }
 }
