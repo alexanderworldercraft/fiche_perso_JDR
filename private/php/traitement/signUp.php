@@ -59,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result->num_rows > 0) {
         // Nom d'utilisateur déjà pris
         $message = "Le nom d'utilisateur est déjà pris.";
-        header("Location: /fiche_perso_JDR/signUp.php?message=" . urlencode($message));
+        header("Location: /fiche_perso_JDR/?getNav=signUp&message=" . urlencode($message));
         exit;
     }
 
@@ -76,12 +76,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($stmt->execute()) {
         // Redirection vers la page d'origine après l'inscription réussie
         $message = "Inscription réussie !";
-        header("Location: /fiche_perso_JDR/login.php?message=" . urlencode($message));
+        header("Location: /fiche_perso_JDR/?getNav=signUp&message=" . urlencode($message));
         exit;
     } else {
         // Gérer l'erreur d'inscription ici
         $message = "Erreur lors de l'incription" . $stmt->error;
-        header("Location: /fiche_perso_JDR/signUp.php?message=" . urlencode($message));
+        header("Location: /fiche_perso_JDR/?getNav=signUp&message=" . urlencode($message));
         exit;
     }
 

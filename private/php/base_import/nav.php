@@ -96,8 +96,16 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
     </a>
     <div class="sub-menu-list" style="visibility: hidden;">
         <ul>
-            <li class="menu-item"><a href="/fiche_perso_JDR/login.php"><span class="menu-title align-middle">Se connecter</span></a></li>
-            <li class="menu-item"><a href="/fiche_perso_JDR/signUp.php"><span class="menu-title align-middle">Créer un compte</span></a></li>
+            <li class="menu-item">
+                <a href="/fiche_perso_JDR/?getNav=login">
+                    <span class="menu-title align-middle">Se connecter</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="/fiche_perso_JDR/?getNav=signUp">
+                    <span class="menu-title align-middle">Créer un compte</span>
+                </a>
+            </li>
         </ul>
     </div>
 </li>

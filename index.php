@@ -38,16 +38,30 @@
 
                     <!-- Début contenu -->
 
+                    <?php 
+                        
+                        $getNav = htmlspecialchars($_GET['getNav']);
+
+                        switch ($getNav) {
+                            case 'login':
+                                require_once 'private/php/centre/login.php';
+                                break;
+                            case 'signUp':
+                                require_once 'private/php/centre/signUp.php';
+                                break;
+                            
+                            default:
+                            ?>
                     <header class="card border-0 rounded-4 bg-transparent mb-3">
                         <div class="card-body">
-                            <h1 class="card-title text-center m-0"><b><i>Création de fiche de personnage pour
+                            <h1 class="card-title text-center m-0"><b><i>Création de fiches de personnage pour
                                         JDR</i></b></h1>
                         </div>
                     </header>
                     <?php
-                        if (isset($_SESSION['userGradeID']) && $_SESSION['userGradeID'] == 1) {
-                            // L'utilisateur est connecté, afficher le lien de déconnexion
-                    ?>
+                            if (isset($_SESSION['userGradeID']) && $_SESSION['userGradeID'] == 1) {
+                                // L'utilisateur est connecté, afficher le lien de déconnexion
+                        ?>
                     <div class="row row-cols-1 row-cols-md-2">
                         <div class="col">
                             <article class="card bg-bleu rounded-4 mb-3">
@@ -83,13 +97,13 @@
                                                         <select class="form-select rounded-3" id="section"
                                                             name="section">
                                                             <?php
-                                                            // Récupérer les sections
-                                                            $sql_sections = "SELECT ThemeID, Name FROM Theme";
-                                                            $result_sections = $conn->query($sql_sections);
-                                                            while ($section = $result_sections->fetch_assoc()) {
-                                                                echo '<option value="' . $section['ThemeID'] . '">' . $section['Name'] . '</option>';
-                                                            }
-                                                            ?>
+                                                                // Récupérer les sections
+                                                                $sql_sections = "SELECT ThemeID, Name FROM Theme";
+                                                                $result_sections = $conn->query($sql_sections);
+                                                                while ($section = $result_sections->fetch_assoc()) {
+                                                                    echo '<option value="' . $section['ThemeID'] . '">' . $section['Name'] . '</option>';
+                                                                }
+                                                                ?>
                                                         </select>
                                                         <label for="section">Theme</label>
                                                     </div>
@@ -129,18 +143,18 @@
                                                         <select class="form-select rounded-3" id="section"
                                                             name="section">
                                                             <?php
-                                                // Récupérer les sections
-                                                $sql_sections = "SELECT Section.SectionID, Section.Name AS section, Theme.Name AS theme
-                                                                FROM Section
-                                                                JOIN Theme ON Section.ThemeID = Theme.ThemeID
-                                                                ORDER BY Theme.Name, Section.Name";
-                                                $result_sections = $conn->query($sql_sections);
-                                                while ($section = $result_sections->fetch_assoc()) {
-                                                    echo '<option value="' . $section['SectionID'] . '">' . $section['section'] . '/' . $section['theme'] . '</option>';
-                                                }
-
-                                                $conn->close();
-                                                ?>
+                                                    // Récupérer les sections
+                                                    $sql_sections = "SELECT Section.SectionID, Section.Name AS section, Theme.Name AS theme
+                                                                    FROM Section
+                                                                    JOIN Theme ON Section.ThemeID = Theme.ThemeID
+                                                                    ORDER BY Theme.Name, Section.Name";
+                                                    $result_sections = $conn->query($sql_sections);
+                                                    while ($section = $result_sections->fetch_assoc()) {
+                                                        echo '<option value="' . $section['SectionID'] . '">' . $section['section'] . '/' . $section['theme'] . '</option>';
+                                                    }
+    
+                                                    $conn->close();
+                                                    ?>
                                                         </select>
                                                         <label for="section">Section</label>
                                                     </div>
@@ -167,9 +181,26 @@
                         </div>
                     </div>
                     <?php
-                        } else {
-                            // L'utilisateur n'est pas connecté
+                            } else {
+                                // L'utilisateur n'est pas connecté
+                                ?>
+
+                    <article class="card bg-bleu rounded-4 shadow">
+                        <section class="card-body">
+                            <h4 class="card-title">Si c'est la première fois que tu viens ici, voici quelques
+                                informations qui te seront utiles.</h4>
+                            <p class="card-text">Tout d'abord, pour utiliser l'application, il te faut un compte afin de
+                                pouvoir sauvegarder tes fiches de personnages. Tu peux en créer un très facilement en
+                                cliquant <a href="/fiche_perso_JDR/?getNav=signUp"
+                                    class="h5 text-danger"><b><i>ici</i></b></a>.</p>
+                        </section>
+                    </article>
+
+                    <?php
+                            }
+                                break;
                         }
+
                     ?>
 
                     <!-- Fin du contenu -->

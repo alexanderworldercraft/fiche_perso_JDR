@@ -67,20 +67,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 // Échec de la connexion (compte dans la corbeille)
                 $message = "Compte dans la corbeille, merci de contacter le SuperAdministrateur.";
                 sleep(3);
-                header("Location: /fiche_perso_JDR/login.php?message=" . urlencode($message));
+                header("Location: /fiche_perso_JDR/?getNav=login&message=" . urlencode($message));
             }
             
         } else {
             // Échec de la connexion (mot de passe)
             $message = "Mot de passe incorrecte";
             sleep(3);
-            header("Location: /fiche_perso_JDR/login.php?message=" . urlencode($message));
+            header("Location: /fiche_perso_JDR/?getNav=login&message=" . urlencode($message));
         }
     } else {
         // Utilisateur non trouvé
         $message = "Utilisateur non trouvé.";
         sleep(3);
-        header("Location: /fiche_perso_JDR/login.php?message=" . urlencode($message));
+        header("Location: /fiche_perso_JDR/?getNav=login&message=" . urlencode($message));
     }
 
     $stmt->close(); // Fermer l'objet statement
