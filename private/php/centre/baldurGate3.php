@@ -1,6 +1,6 @@
 <header class="card border-0 rounded-4 bg-transparent mb-3">
     <div class="card-body">
-        <h1 class="card-title text-center m-0"><b><i>Fiche pour Baldur gate 3</i></b></h1>
+        <h1 class="card-title text-center m-0"><b><i>Fiche pour Baldur's Gate 3</i></b></h1>
     </div>
 </header>
 
