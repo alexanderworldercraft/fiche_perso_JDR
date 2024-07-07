@@ -29,32 +29,48 @@ hljs.highlightAll();
 
 <!-- Bibliothèque pour les select (recherche d'options) (select2) -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
-<style>
-        /* Thème sombre personnalisé pour Select2 */
-        .select2-container--default .select2-selection--single {
-            background-color: #333;
-            color: #fff;
-            border: 1px solid #444;
-        }
-        .select2-container--default .select2-selection--single .select2-selection__arrow b {
-            border-color: #fff transparent transparent transparent;
-        }
-        .select2-container--default .select2-selection--single .select2-selection__placeholder {
-            color: #ccc;
-        }
-        .select2-dropdown {
-            background-color: #333;
-            color: #fff;
-            border: 1px solid #444;
-        }
-        .select2-results__option {
-            background-color: #333;
-            color: #fff;
-        }
-        .select2-results__option--highlighted {
-            background-color: #555;
-        }
-    </style>
+
+<!-- Style pour le btn theme -->
+<style type="text/css">
+	.bi {
+	    vertical-align: -.125em;
+	    fill: currentColor;
+	}
+	
+	.btn-bd-primary {
+	    --bs-btn-hover-border-color: currentColor;
+	    --bs-btn-active-border-color: currentColor;
+        backdrop-filter: blur(4px);
+	}
+	
+	.bd-mode-toggle {
+	    z-index: 1500;
+	}
+
+    /* Pour la "poignée" de la barre de défilement verticale */
+    ::-webkit-scrollbar-thumb {
+        border: 1px solid currentColor;
+        background-color: transparent;
+        border-radius: 5px;
+    }
+
+    /* Pour la barre de défilement verticale elle-même */
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    /* Pour la "poignée" de la barre de défilement horizontale */
+    ::-webkit-scrollbar-thumb:horizontal {
+        border: 1px solid currentColor;
+        background-color: transparent;
+        border-radius: 5px;
+    }
+
+    /* Pour la barre de défilement horizontale elle-même */
+    ::-webkit-scrollbar:horizontal {
+        width: 10px;
+    }
+</style>
 
 <?php
 session_start();

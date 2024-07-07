@@ -49,7 +49,7 @@
 
 .card__position {
     font-style: italic;
-    color: #ccc;
+    color: var(--color-text-menu);
     margin: 0;
 }
 

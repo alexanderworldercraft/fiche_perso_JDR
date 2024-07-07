@@ -30,5 +30,5 @@
 }
 
 .bg-bleu {
-    background-color: #0a1b36;
+    background-color: var(--color-principal-autre);
 }

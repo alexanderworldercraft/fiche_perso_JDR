@@ -1,12 +1,16 @@
 <?php
 
-session_start();
+$getNav = htmlspecialchars($_GET['getNav']);
+
+switch ($getNav) {
+    case 'baldurGate3':
+        session_start();
 if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
     // L'utilisateur n'est pas connecté ou la session n'est pas valide
-    header('Location: ./login.php'); // Redirection vers la page de connexion
+        $message = "Tu n'est pas connecter, si tu souhaite poursuivre ? connecte toi à ton compte.";
+        header('Location: /fiche_perso_JDR/?getNav=login&message=' . urlencode($message));
     exit();
 }
-$user_id = $_SESSION['user_id']; // Récupérez l'ID de l'utilisateur depuis la session
 // Définir un tableau des grades autorisés
 
 // Durée de timeout en secondes (ex: 300 secondes = 5 minutes)
@@ -22,11 +26,17 @@ if (isset($_SESSION['last_activity'])) {
         // Détruire la session et rediriger vers la page de connexion
         session_unset();
         session_destroy();
-        header('Location: ./login.php');
+        $message = "temps écoulé, rediriger vers l'accueil";
+        header('Location: /fiche_perso_JDR/?getNav=login&message=' . urlencode($message));
         exit();
     }
 }
 // Mise à jour du timestamp de la dernière activité
 $_SESSION['last_activity'] = time();
+        break;
+    
+    default:
+        break;
+}
 // contenu sécurisé
 ?>
