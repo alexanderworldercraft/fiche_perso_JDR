@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Vérification des données (vous pouvez ajouter vos propres validations)
     if ($password !== $confirmPassword) {
         $message = "Les mots de passe ne correspondent pas.";
-        header("Location: /fiche_perso_JDR/signUp.php?message=" . urlencode($message));
+        header("Location: /fiche_perso_JDR/?getNav=signUp&message=" . urlencode($message));
         exit;
     }
     

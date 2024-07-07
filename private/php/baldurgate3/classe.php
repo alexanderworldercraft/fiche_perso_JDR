@@ -1,5 +1,5 @@
-<article class="card bg-bleu rounded-4 mb-3">
-    <section class="card-body">
+<article class="card bg-transparent border-0 mb-3">
+    <section class="card-body p-0">
         <?php
 
 if (!defined('projet_perso-JDR')) {
@@ -28,11 +28,11 @@ $result_rows = $stmt_rows->get_result();
 while ($row = $result_rows->fetch_assoc()) {
     ?>
             <div class="col">
-                <div class="card">
-                    <img src="serve_file.php?file=img/fiche/classe/<?php echo $row['img']; ?>" class="card-img-top"
+                <div class="card bg-bleu rounded-4">
+                    <img src="serve_file.php?file=img/fiche/classe/<?php echo $row['img']; ?>" class="card-img-top rounded-top-4"
                         alt="...">
                     <div class="card-body">
-                        <h5 class="card-title"><?php echo $row['Nom']; ?></h5>
+                        <h4 class="card-title text-primary-emphasis"><b><i><?php echo $row['Nom']; ?></i></b></h4>
                         <p class="card-text"><?php echo $row['Description']; ?></p>
                         <form action="/fiche_perso_JDR/?getNav=baldurGate3&getform=1&message=tu a choisi la classe <?php echo $row['Nom']; ?>" method="post">
                             <input type="hidden" name="classe" id="classe" value="<?php echo $row['ClasseID']; ?>">

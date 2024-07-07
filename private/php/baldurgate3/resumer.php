@@ -1,4 +1,4 @@
-<article class="card bg-bleu rounded-4 mb-3">
+<article class="card bg-transparent border-0 mb-3">
     <section class="card-body">
         <?php
 
@@ -32,16 +32,16 @@ $result_rows = $stmt_rows->get_result();
 
 while ($row = $result_rows->fetch_assoc()) {
     ?>
-        <div class="card">
+        <div class="card bg-bleu rounded-4">
             <div class="card-header">
-                <h4>Résumer du personnage</h4>
+                <h3 class="text-primary-emphasis">Résumer du personnage</h3>
             </div>
             <div class="card-body">
-                <h5 class="card-title"><b><i>Classe : <?php echo $row['Classe']; ?></i></b></h5>
+                <h4 class="card-title text-primary-emphasis"><b><i>Classe : <?php echo $row['Classe']; ?></i></b></h4>
                 <p class="card-text"><?php echo $row['DescriptionClasse']; ?></p>
-                <h5 class="card-title"><b><i>Sous-classe : <?php echo $row['sousClasse']; ?></i></b></h5>
+                <h4 class="card-title text-primary-emphasis"><b><i>Sous-classe : <?php echo $row['sousClasse']; ?></i></b></h4>
                 <p class="card-text"><?php echo $row['DescriptionSousClasse']; ?></p>
-                <h5 class="card-title"><b><i>Race : <?php echo $row['Race']; ?></i></b></h5>
+                <h4 class="card-title text-primary-emphasis"><b><i>Race : <?php echo $row['Race']; ?></i></b></h4>
                 <p class="card-text"><?php echo $row['DescriptionRace']; ?></p>
                 <form>
                     <input type="hidden" name="classe" id="classe" value="<?php echo $row['RaceID']; ?>">
