@@ -15,11 +15,37 @@
             </a>
             <div class="sub-menu-list">
                 <ul>
+                    <?php
+                    if (!defined('projet_perso-JDR')) {
+                        define('projet_perso-JDR', true);
+                    }
+                    
+                    require_once "private/php/base_import/key.php";
+                    
+                    // Créer une connexion
+                    $conn = new mysqli($servername, $username, $password, $dbname);
+                    
+                    // Vérifier la connexion
+                    if ($conn->connect_error) {
+                        die("Connection failed: " . $conn->connect_error);
+                    }
+                    
+                    // Récupérer les thèmes
+                    $sql_rows = "SELECT Ref, Nom FROM Univers";
+                    $stmt_rows = $conn->prepare($sql_rows);
+                    $stmt_rows->execute();
+                    $result_rows = $stmt_rows->get_result();
+
+                    while ($row = $result_rows->fetch_assoc()) {
+                    ?>
                     <li class="menu-item">
-                        <a href="/fiche_perso_JDR/?getNav=baldurGate3">
-                            <span class="menu-title align-middle">Baldur gate 3</span>
+                        <a href="/fiche_perso_JDR/?getNav=<?php echo $row['Ref']; ?>">
+                            <span class="menu-title align-middle"><?php echo $row['Nom']; ?></span>
                         </a>
                     </li>
+                    <?php
+                    }
+                    ?>
                 </ul>
             </div>
         </li>

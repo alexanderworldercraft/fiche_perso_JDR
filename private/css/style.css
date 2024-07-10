@@ -32,3 +32,21 @@
 .bg-bleu {
     background-color: var(--color-principal-autre);
 }
+
+@media (min-width: 720px) {
+    .border-md-2 {
+        border-width: 2px!important;
+        border-right: 0!important;
+    }
+}
+@media (min-width: 960px) {
+    .border-md-2 {
+        border-right: 2px solid var(--bs-primary-border-subtle)!important;
+    }
+}
+
+@media (max-width: 720px) {
+    .border-md-2 {
+        border: 0!important;
+    }
+}

@@ -53,6 +53,9 @@
                             case 'baldurGate3':
                                 require_once 'private/php/centre/baldurGate3.php';
                                 break;
+                            case 'ambre':
+                                require_once 'private/php/centre/ambre.php';
+                                break;
                             
                             default:
                             require_once 'private/php/centre/index.php';
